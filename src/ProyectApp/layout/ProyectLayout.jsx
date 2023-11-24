@@ -3,6 +3,7 @@ import { NavBar } from "../components/NavBar"
 import { SideBar } from "../components/SideBar"
 
 
+
 export const ProyectLayout = ({children}) => {
   return (
     <>
@@ -14,11 +15,11 @@ export const ProyectLayout = ({children}) => {
             {/* <Hero/> */}
 
         </Box>
-
-
             <Box component='main'  sx={{flexGrow: 1, height:'100%' }}>
                 {children}
             </Box>
+
+
 
     
     </>

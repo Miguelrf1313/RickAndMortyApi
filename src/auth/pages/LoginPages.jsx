@@ -22,7 +22,7 @@ const isAuthenticated = useMemo(() => status === 'checking', [status])
 
  const dispatch = useDispatch()
 
-    const {password, email, onInputChange} = useForm({email:'rios@gmail.com', password:'1234565'});
+    const {password, email, onInputChange} = useForm({email:'', password:''});
 
     const onSumit = (event) => {
       event.preventDefault()
@@ -58,11 +58,7 @@ const isAuthenticated = useMemo(() => status === 'checking', [status])
          <Grid container spacing={0} alignItems="center" direction="row"  justifyContent="center" sx={{ minHeight: "55vh", backgroundColor: "white", padding: 4, }}>
          
            <Grid item className="box-shadow" xs={12} sm={6} md={4}  justifyContent="center" sx={{ width: "50px",backgroundColor: "white",padding: 3,borderRadius: 2,}} >
-             <Grid container direction="row">
-               <Grid item xs={12}sx={{minWidth: "100mw",display: "flex",alignItems: "center",flexDirection: "column",mb: 2,}}>
-             </Grid>
-           </Grid>
-                        
+            
             <form onSubmit={onSumit}>
               <Grid item>
                 <Grid item xs={12} sx={{ mb: 2 }}> 

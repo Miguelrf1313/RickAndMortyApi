@@ -1,17 +1,42 @@
 import { ramApi } from "../api/r&mApi"
-import { setChraracters, starLoadin } from "../slices/ProyectSlice/ProyectSlice"
+import {setCharacters, startLoading} from '../slices/ProyectSlice/ProyectSlice'
 
 
 
 
-export const getCharactersApi = (page = 0) => {
-    return async(dispacth, generated) => {
-        dispacth(starLoadin() )
-        // const resp = await fetch(`https://rickandmortyapi.com/api/character/?${page * 10}`);
-        // const data = await resp.json();
-        // console.log(data.results)
-        const {data} = await ramApi.get(`character/?${page * 10}`)
-        console.log(data.results)
-        dispacth(setChraracters( {characters: data.results, page: page + 1}))
-    }
+
+export const getCharactersApi = ( pages,names ) => {
+
+    
+    return async(dispacth, getState) => {
+        
+        dispacth((startLoading()) )
+        const {data} = await ramApi.get(`character?page=${pages}&name=${names}`)
+     dispacth( setCharacters({ characters: data.results, page: pages, name:names}) )
+    }   
 }
+
+// export const onNextPage = (page) =>{
+//     return async(dispacth, getState) => {
+        
+//         dispacth((startLoading()) )
+//         dispacth( changePage({ page: page }) )
+        
+// }}
+
+// export const onBackPage = (pages) =>{
+//     return async(dispacth, getState) => {
+        
+//         dispacth((startLoading()) )
+//         dispacth( changePage({ page: pages}) )
+        
+// }}
+
+// export const searchCharacter = ({names}) => {
+//     return async(dispacth) => {
+//         const {data} = await ramApi.get(`character?name=${names}`)
+//         await dispacth( setCharacters({ characters: data.results}) )
+//         dispacth(nameSeshing({name: names }))
+      
+//     }
+// }

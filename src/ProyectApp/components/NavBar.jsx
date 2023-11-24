@@ -66,7 +66,7 @@ export const NavBar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography color='secondary' variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {displayName}
           </Typography>
           {auth && (

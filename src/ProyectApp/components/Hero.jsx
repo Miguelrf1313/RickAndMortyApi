@@ -2,15 +2,25 @@ import { Box, Button, Container, FormControlLabel, FormGroup, Grid, Skeleton, Sw
 import React from 'react'
 import hero1 from './assets/hero3.jpg'
 import logo from './assets/rick.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { timeLoading } from '../../slices/ProyectSlice/ProyectSlice'
 
 
 
 export const Hero = () => {
 
+
+    const dispactch = useDispatch()
+    
+
+    const loadingActive = ()=>{
+        dispactch(timeLoading())
+    }
+
  
   return (
   
-        <Box component='nav' sx={{
+        <Box component='container' sx={{
             backgroundImage: `url(${hero1})`,
             backgroundRepeat:'no-repeat',
             backgroundColor:'black',
@@ -49,7 +59,7 @@ export const Hero = () => {
                     </Grid>
                         <Grid item sx={{ width:'50%', height:'10vh', display:'flex',justifyContent:'center',alignItems:'center', paddingLeft:'10px'}}>
                             <Box  sx={{padding:'20px',display:'flex', }} >
-                                <Button sx={{background:'linear-gradient( to left, rgba(116, 9, 121, 1), rgba(185, 8, 246, 1), rgba(91, 28, 230, 1) )', borderRadius: '30px', color:'white', fontWeight:'bolder',fontSize:'1.5rem', width:'500px', height:'70px'}} variant='contained' color='secondary' >¡Iniciar ahora!</Button>
+                                <Button onClick={loadingActive} sx={{background:'linear-gradient( to left, rgba(116, 9, 121, 1), rgba(185, 8, 246, 1), rgba(91, 28, 230, 1) )', borderRadius: '30px', color:'white', fontWeight:'bolder',fontSize:'1.5rem', width:'500px', height:'70px'}} variant='contained' color='secondary' >¡Iniciar ahora!</Button>
                             </Box>
 
                         </Grid>
