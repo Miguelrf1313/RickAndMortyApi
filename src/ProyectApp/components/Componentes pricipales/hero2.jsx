@@ -1,10 +1,9 @@
 import { Box, Button, Container, FormControlLabel, FormGroup, Grid, Skeleton, Switch, Typography, styled } from '@mui/material'
 import React from 'react'
-import logo from './assets/rick.png'
-
-import hero4 from './assets/hero4.jpg'
+import logo from '../../assets/rick.png'
 import { useDispatch } from 'react-redux'
-import {CardsContainer} from './CardsContainer'
+import {CardsContainer} from '../components/../Componentes del perfi/CardsContainer'
+import hero4 from '../../assets/hero4.jpg'
 
 
 export const Hero2 = () => {
@@ -62,7 +61,7 @@ export const Hero2 = () => {
                                   Disponible en HBO MAX
                               </Typography>
                               <Typography padding='10px' display='flex' flexDirection='column' fontSize='70%' width='67%' variant='p'>
-                                  Un padre aparece de imprevisto en la puerta de la casa de su hija, veiinte años despues de desparecer.
+                                  Un padre aparece de imprevisto en la puerta de la casa de su hija, veinte años despues de desparecer.
                                       <span style={{color:'gray', fontWeight:'bold'}}> Animación 2013  16+</span>
                               </Typography>
                               <Typography padding='10px'  fontSize='70%' width='25%' variant='p'>

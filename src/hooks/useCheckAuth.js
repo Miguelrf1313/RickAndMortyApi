@@ -5,6 +5,8 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { FireBaseAuth } from '../firebase/config'
 import { inlogin, inlogout } from '../store/auth/AuthSlice'
 import { useEffect } from 'react'
+import { startLoadingCharacters } from '../slices/ChraracterSlice/thunks'
+
 
 
 
@@ -20,6 +22,7 @@ export const useCheckAuth = () => {
         if (!user) return dispatch(inlogout());
         const {uid, displayName, photoURL} = user;
         dispatch(inlogin({uid, displayName, photoURL}))
+        dispatch(startLoadingCharacters())
       })
     }, [])
     

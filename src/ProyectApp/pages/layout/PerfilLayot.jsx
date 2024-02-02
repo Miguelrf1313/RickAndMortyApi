@@ -4,18 +4,16 @@ import { SideBar } from "../../components/Componentes pricipales/SideBar"
 
 
 
-export const ProyectLayout = ({children}) => {
+export const PerfilLayot = ({children}) => {
   return (
     <>
     
         <Grid sx={{display:'flex'}} >
 
-             {/* <SideBar/> */}
-        <NavBar/>
-            {/* <Hero/> */}
+     
 
         </Grid>
-            <Grid component='main'  sx={{flexGrow: 1, height:'100%' }}>
+            <Grid component='main'  sx={{flexGrow: 1, display:'flex', alignItems:'center', flexDirection:'column',  height:'100%' }}>
                 {children}
             </Grid>
 
