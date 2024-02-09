@@ -4,12 +4,12 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
 
 const buttons = [
-  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#312d2d'}} key="one">Inicio</Button>,
-  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#312d2d' }} key="two">Docmentación</Button>,
-  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#312d2d'}}key="three">Personajes</Button>,
-  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#312d2d'}} key="one">Temporadas</Button>,
-  <Button sx={{borderRadius:'20px',  color:'white', backgroundColor:'#312d2d'}} key="two">Imagenes</Button>,
-  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#312d2d'}}key="three">Trailers</Button>,
+  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#212b36'}} key="one">Inicio</Button>,
+  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#212b36' }} key="two">Docmentación</Button>,
+  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#212b36'}}key="three">Personajes</Button>,
+  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#212b36'}} key="one">Temporadas</Button>,
+  <Button sx={{borderRadius:'20px',  color:'white', backgroundColor:'#212b36'}} key="two">Imagenes</Button>,
+  <Button sx={{borderRadius:'20px', color:'white', backgroundColor:'#212b36'}}key="three">Trailers</Button>,
 ];
 
 export default function GroupOrientation() {

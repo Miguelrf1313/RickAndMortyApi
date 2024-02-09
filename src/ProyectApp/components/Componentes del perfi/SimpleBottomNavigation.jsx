@@ -8,11 +8,12 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
+  
 
   return (
     <Box sx={{ width: 500 }}>
       <BottomNavigation
-      sx={{backgroundColor:'#312d2d',color:'error', borderRadius:'8px' }}
+      sx={{backgroundColor:'#212b36',color:'error', borderRadius:'8px', boxShadow:'2px 3px 7px 0px' }}
         showLabels
         value={value}
         onChange={(event, newValue) => {

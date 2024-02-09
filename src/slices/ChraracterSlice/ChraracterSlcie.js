@@ -8,7 +8,7 @@ export const charactersSlice = createSlice({
   initialState:{ 
    perfilState: false,
    favorite:[],
-   recents:[],
+    active:[]
 
    
 
@@ -20,14 +20,19 @@ export const charactersSlice = createSlice({
         state.perfilState = false;
       },
 
-      setActivenote: (state) => {
-        state.perfilState = true;
+      setActiveC: (state, action) => {
+        state.active = action.payload;
       },
 
       setEmplyCharacter: (state, action) => {
           state.favorite = action.payload;
           state.charactersAvtive = action.payload;
       },
+
+      delectCharacter: (state, action) => {
+          state.active = null;
+          state.favorite = state.favorite.filter( fa => fa.dni !== action.payload)
+      }
       
   
 
@@ -40,4 +45,4 @@ export const charactersSlice = createSlice({
 })
 
 
-export const {setCharacters,setEmplyCharacter} = charactersSlice.actions
+export const {setCharacters,setEmplyCharacter,setActiveC,delectCharacter  } = charactersSlice.actions

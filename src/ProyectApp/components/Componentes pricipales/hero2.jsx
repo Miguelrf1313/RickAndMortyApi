@@ -4,6 +4,7 @@ import logo from '../../assets/rick.png'
 import { useDispatch } from 'react-redux'
 import {CardsContainer} from '../components/../Componentes del perfi/CardsContainer'
 import hero4 from '../../assets/hero4.jpg'
+import { CardsContainer2 } from '../Componentes de las Cards/CardsContainer2'
 
 
 export const Hero2 = () => {

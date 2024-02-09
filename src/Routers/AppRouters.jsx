@@ -5,6 +5,7 @@ import { ProyectRoutes } from '../ProyectApp/routes/ProyectRoutes'
 import { CheckingAuth } from '../ui/components/checkingAuth'
 
 import { useCheckAuth } from '../hooks/useCheckAuth'
+import { UseProvider } from '../ProyectApp/useContext/UseProvider'
 
 export const AppRouters = () => {
 
@@ -21,8 +22,10 @@ export const AppRouters = () => {
 
  
   return (
-    <Routes>
-
+    <UseProvider>
+      <Routes>
+        
+    
       {
           (status === 'authenticated') ? <Route path='/*' element={<ProyectRoutes/>} /> :  <Route path='/auth/*' element={<AuthRoutes/>} />
       }
@@ -31,10 +34,10 @@ export const AppRouters = () => {
 
      
 
-     
+      </Routes>
 
 
 
-    </Routes>
+    </UseProvider>
   )
 }

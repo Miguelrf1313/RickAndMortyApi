@@ -68,3 +68,12 @@ export const startLogOut = () => {
         dispatch(inlogout())
     }
 }
+
+
+export const startDelet = () => {
+    return async (dispatch, getState) => {
+
+        const { uid } = getState().auth;
+        
+    }
+}

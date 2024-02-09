@@ -5,9 +5,10 @@ import {
   IconButton,
   Grid,
   Typography,
+  Divider,
 } from "@mui/material";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CardsContainer2 } from "../Componentes de las Cards/CardsContainer2";
 import section from "../../assets/section.jpg"; 
 import GroupOrientation from "./GroupOrientation";
@@ -18,12 +19,16 @@ import { Recents } from "./Recents";
 
 
 
+
 export const CardsContainer = () => {
   const { favorite, perfilState } = useSelector((state) => state.characters);
 
   const { photoURL, displayName, status, uid } = useSelector(
     (state) => state.auth
   );
+
+  const dispactch = useDispatch()
+
 
   let autenticate = status;
   autenticate = "Autenticado";
@@ -33,7 +38,7 @@ export const CardsContainer = () => {
       {/* CONTENEDOR DE TARJETAS DE PERSONAJES  */}
 
       <Grid
-        backgroundColor="white  "
+        backgroundColor="red  "
         container
         gap="30px"
         display="flex"
@@ -43,12 +48,12 @@ export const CardsContainer = () => {
         flexDirection="column"
         width="100%"
       >
-        <Grid variant="container" display="flex" backgroundColor="black">
+        <Grid variant="container" width='100%' display="flex" backgroundColor="#041C32">
           {/* CAJON NUMERO 1 PRINCIPAL */}
           <Box
             sx={{
               display: "flex",
-              width: "100vw",
+              width: "100%",
               alignItems: "center",
               justifyContent: "space-between",
             }}
@@ -71,7 +76,7 @@ export const CardsContainer = () => {
               sx={{
                 display: "flex",
                 width: "59%",
-                backgroundColor: "black",
+                backgroundColor: "#041C32",
                 flexDirection: "column",
               }}
             >
@@ -140,7 +145,7 @@ export const CardsContainer = () => {
                   sx={{
                     width: { lg: "100%" },
                     height: "100%",
-                    backgroundColor: "black",
+                    backgroundColor: "#041C32",
                     gap: "20vh",
                     color: "white",
                     justifyContent: "center",
@@ -181,45 +186,17 @@ export const CardsContainer = () => {
                     {" "}
                     <Typography> {autenticate} </Typography>
                   </Grid>
-                  <Grid
-                    item
-                    sx={{
-                      display: "flex",
-                      width: { lg: "100%" },
-                      borderRadius: "20px",
-                      padding: "20px",
-                      ".css-ahj2mt-MuiTypography-root.css-ahj2mt-MuiTypography-root":
-                        {
-                          fontSize: "1vw",
-                          fontFamily: "monospace",
-                          fontWeight: "bold",
-                          color:'white'
-                        },
-                      marginTop: "20px",
-                      textAlign: "center",
-                      backgroundColor: "#312d2d",
-                      color: "black",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {" "}
-                    <Typography>
-                      {" "}
-                      En esta zona podras visualizar todos los personajes que
-                      has seleccionado a lo largo de tu aventura entre
-                      dimensiones. Tambien tienes una lista de aquellos que más
-                      fueron de tu agrado. Sientete libre de agregar o eliminar
-                      cualquier otro personaje de tu bandeja. ¡Que esperas para
-                      continuar con este viaje?!{" "}
-                    </Typography>
-                  </Grid>
+
+                      <Divider sx={{ bgcolor: '#04293A' }}>Historial y Favoritos </Divider>
+                
+             
                 </Box>
               </Grid>
 
               <Grid
                 container
                 width="100%"
-                backgroundColor="black"
+                backgroundColor="#041C32"
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
@@ -229,17 +206,18 @@ export const CardsContainer = () => {
                 <Grid
                   sx={{
                     width: "90%",
-                    border: "solid 4px gray",
+                    // border: "solid 1px gray",
                     flexDirection: "column",
+                    boxShadow:'0px 3px 10px 2px',
                     alignItems: "center",
                     display: "flex",
-                    backgroundColor: "black",
+                    backgroundColor: "#161c24",
                     padding: "20px",
                   }}
                 >
 
                   <PerfilLayot>
-
+            
                     {
                       (!perfilState) ?  <Recents favorite={favorite} /> : <Favorite favorite={favorite} />
                     }
@@ -266,7 +244,8 @@ export const CardsContainer = () => {
           </Box>
         </Grid>
 
-        <CardsContainer2 />
+       
+      <CardsContainer2/>
       </Grid>
     </>
   );

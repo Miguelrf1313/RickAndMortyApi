@@ -17,85 +17,35 @@ import { getCharactersApi } from "../../../thunks/thunks";
 import { useForm } from "../../../hooks/useForm";
 import { Modal1 } from "./VentanaModa";
 
-
-
-
 export const CardsContainer2 = () => {
   const [pages, setPages] = useState(0);
   const [names, setNames] = useState("");
   const [genero, setGenero] = useState("");
   const [estado, setEstado] = useState("");
   const [especie, setEspecie] = useState("");
-  const [ids, setIds] = useState(0)
-
-
-  const {
-    characters = []
-  } = useSelector((state) => state.proyect);
-  const { favorite, perfilState } = useSelector((state) => state.characters);
-  const { onInputChange } = useForm();
-
-
-
-// Array vacío
-// const miArray = [];
-
-// Iterar sobre las propiedades del objeto y agregarlas al array
-// for (var propiedad in favorite) {
-//   if (favorite.hasOwnProperty(propiedad)) {
-//     miArray.push(favorite[propiedad]);
-//   }
-// }
-// zzz
-
-// Utilizando el método map para crear un nuevo array con solo los valores de id
-
-
-
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-  
-    setOpen(true)
-
-  } 
-  const handleClose = () => setOpen(false);
-
- 
-
-  const onClearn = () => {
-    setEspecie("");
-    setEstado("");
-    setGenero("");
-    setPages(1);
-  };
-
-  const dispatch = useDispatch();
+  const [ids, setIds] = useState(0);
 
   useEffect(() => {
     dispatch(getCharactersApi({ pages, names, genero, estado, especie }));
   }, [pages, names, genero, estado, especie]);
 
+  const { characters = [] } = useSelector((state) => state.proyect);
+
+  const { onInputChange } = useForm();
+  const dispatch = useDispatch();
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => setOpen(false);
+
   return (
     <>
       {/* CONTENEDOR DE TARJETAS DE PERSONAJES  */}
 
-      <Grid
-        item
-        display="flex"
-        alignItems="center"
-        backgroundColor="black"
-        flexDirection="column"
-        height="100vh"
-      >
-                <Box
-          component="div"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="row"
-          width="100%"
-          height="150vh"
-        >
+     
+      
           <Grid
             container
             gap="30px"
@@ -104,6 +54,7 @@ export const CardsContainer2 = () => {
             justifyContent="center"
             alignItems="center"
             width="100%"
+            backgroundColor='red'
           >
             <Grid
               item
@@ -114,6 +65,7 @@ export const CardsContainer2 = () => {
                 gap: "20px",
                 width: "100%",
                 height: "auto",
+                backgroundColor:'blue'
               }}
             >
               <TextField
@@ -121,7 +73,6 @@ export const CardsContainer2 = () => {
                 placeholder="Buscar personaje"
                 color="secondary"
                 type="search"
-                
                 name="nombre"
                 value={names}
                 onChange={(e) => {
@@ -137,14 +88,13 @@ export const CardsContainer2 = () => {
                   color: "blue",
                 }}
               />
-            
             </Grid>
             <Grid
               container
-         
-              justifyContent="center"
+              justifyContent="left"
               alignItems="center"
               display="flex"
+              backgroundColor="#041C32"
             >
               <Grid
                 component="div"
@@ -171,36 +121,35 @@ export const CardsContainer2 = () => {
               <Grid
                 container
                 // lg={12}
-                sx={{
-                  height: "80vh",
-                  display: "flex",
-                  // flexDirection: "row",
-                  alignItems:'center',
-                  justifyContent: "center",
-                  gap: "5px",
-                  padding: "20px",
-                
-                  width: "75vw",
-                }}
+                height="80vh"
+                display="flex"
+                // flexDirection: "row",
+                alignItems="center"
+                justifyContent="center"
+                gap="5px"
+                padding="20px"
+                backgroundColor="#212b36"
+                width="20vw"
               >
-             
-                <Modal1  ids={ids} handleClose={handleClose} handleOpen={handleOpen} open={open} setOpen={setOpen}/>
+                <Modal1
+                  ids={ids}
+                  handleClose={handleClose}
+                  handleOpen={handleOpen}
+                  open={open}
+                  setOpen={setOpen}
+                />
                 {characters.map((chara) => (
-                  <CardActionArea 
-                  onClick={() => {
-                   
-                    handleOpen(chara.id)
-                    setIds(chara.id)
-                    
-                    
-                  }}
+                  <CardActionArea
+                    onClick={() => {
+                      handleOpen(chara.id);
+                      setIds(chara.id);
+                    }}
                     key={chara.id}
                     sx={{
                       display: "flex",
                       flexWrap: "wrap",
                       overflow: "hidden",
                       width: "15%",
-              
                     }}
                   >
                     {(() => {
@@ -208,17 +157,14 @@ export const CardsContainer2 = () => {
                         return (
                           <CardMedia
                             display="flex"
-                          
                             sx={{
-                         
                               border: "#20c439  solid 0.125em",
                               boxShadow: "0 0 1em 0 #20c439",
                               borderRadius: "0.158em",
-                              maxWidth: "9vw",
-                              height: "13vh",
+                              maxWidth: "7vw",
+                              height: "18vh",
                               display: "flex",
-                              backgroundColor:'red'
-                            
+                              backgroundColor: "red",
                             }}
                             component="img"
                             image={chara.image}
@@ -229,15 +175,13 @@ export const CardsContainer2 = () => {
                         return (
                           <CardMedia
                             display="flex"
-                        
                             sx={{
                               border: "#C70039  solid 0.125em",
                               boxShadow: "0 0 1em 0 #C70039",
                               borderRadius: "0.158em",
-                              maxWidth: "9vw",
-                              height: "13vh",
+                              maxWidth: "10vw",
+                              height: "11vh",
                               display: "flex",
-                           
                             }}
                             component="img"
                             image={chara.image}
@@ -248,15 +192,13 @@ export const CardsContainer2 = () => {
                         return (
                           <CardMedia
                             display="flex"
-                          
                             sx={{
                               border: "#EEEEEE  solid 0.125em",
                               boxShadow: "0 0 1em 0 #EEEEEE",
                               borderRadius: "0.158em",
-                              maxWidth: "9vw",
-                              height: "13vh",
+                              maxWidth: "6vw",
+                              height: "15vh",
                               display: "flex",
-                              
                             }}
                             component="img"
                             image={chara.image}
@@ -293,10 +235,8 @@ export const CardsContainer2 = () => {
               </Grid>
             </Grid>
           </Grid>{" "}
-        </Box>
+        
 
- 
-      </Grid>
     </>
   );
 };

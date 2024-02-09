@@ -97,3 +97,19 @@ body {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
   }
+
+
+
+
+  .morty{
+    width: 50px;
+    filter: drop-shadow(5px 5px 10px #555);
+  }
+
+  
+  .popo{
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    filter: drop-shadow(5px 5px 10px #555);
+  }
