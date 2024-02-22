@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material"
-import { NavBar } from "../../components/Componentes pricipales/NavBar"
+import  NavBar2 from "../../components/Componentes pricipales/NavBar2"
 import { SideBar } from "../../components/Componentes pricipales/SideBar"
 
 
@@ -11,7 +11,7 @@ export const ProyectLayout = ({children}) => {
         <Grid sx={{display:'flex'}} >
 
              {/* <SideBar/> */}
-        <NavBar/>
+        <NavBar2/>
             {/* <Hero/> */}
 
         </Grid>

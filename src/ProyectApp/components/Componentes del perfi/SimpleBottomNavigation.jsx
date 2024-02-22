@@ -20,7 +20,7 @@ export default function SimpleBottomNavigation() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction color='white'  sx={{".css-imwso6-MuiBottomNavigationAction-label":{color:'white', fontFamily:'monospace'}}} label="Recents" icon={<RestoreIcon color='error' />} />
+     
         <BottomNavigationAction  sx={{".css-imwso6-MuiBottomNavigationAction-label":{color:'white', fontFamily:'monospace'}}} label="Favorites" icon={<FavoriteIcon color='error'/>} />
       </BottomNavigation>
     </Box>

@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material"
-import { NavBar } from "../../components/Componentes pricipales/NavBar"
+// import { NavBar } from "../../components/Componentes pricipales/NavBar"
 import { SideBar } from "../../components/Componentes pricipales/SideBar"
 
 

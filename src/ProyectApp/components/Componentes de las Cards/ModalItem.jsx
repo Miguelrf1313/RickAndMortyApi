@@ -36,7 +36,7 @@ export default function ModalItem({newFavorite,characterss}) {
 
 
   return (
-    <Card sx={{ maxWidth: 345, backgroundColor:'#212b36', color:'white', boxShadow:'2px 3px 10px 0px black'  }}>
+    <Card sx={{ maxWidth: 345, backgroundColor:'#3f4443', color:'white', boxShadow:'2px 3px 10px 0px black'  }}>
       
 
       

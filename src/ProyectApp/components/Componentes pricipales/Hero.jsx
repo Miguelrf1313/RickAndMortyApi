@@ -19,8 +19,9 @@ export const Hero = () => {
 
  
   return (
-  
-        <Grid  sx={{
+    <>
+    
+    <Grid  sx={{
             backgroundImage: `url(${hero1})`,
             backgroundRepeat:'no-repeat',
             backgroundColor:'black',
@@ -67,5 +68,9 @@ export const Hero = () => {
 
        
     </Grid>
+    
+   
+  
+   </>
   )
 }

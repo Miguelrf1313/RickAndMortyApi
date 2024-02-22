@@ -6,7 +6,7 @@ export const charactersSlice = createSlice({
 
   name:'characters',
   initialState:{ 
-   perfilState: false,
+   cardLoading: false,
    favorite:[],
     active:[]
 
@@ -17,7 +17,7 @@ export const charactersSlice = createSlice({
   reducers: {
     setCharacters: (state, action) => {
         state.favorite.push(action.payload);
-        state.perfilState = false;
+        state.cardLoading = false;
       },
 
       setActiveC: (state, action) => {

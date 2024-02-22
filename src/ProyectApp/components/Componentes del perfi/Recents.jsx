@@ -7,8 +7,6 @@ export const Recents = ({favorite}) => {
 
 
 
-    console.log(favorite)
-
 
 
   return (

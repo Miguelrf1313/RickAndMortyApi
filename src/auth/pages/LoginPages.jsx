@@ -31,11 +31,11 @@ const isAuthenticated = useMemo(() => status === 'checking', [status])
 
     const onLoginGoogle = () => {
       dispatch(startGoogleSignIn())
-      console.log('teLogueasteConGoogleMiRey')
+    
     }
 
     const onLoginInFacebook = () => {
-      console.log('te Logueaste con Facebook')
+    
       dispatch(startFacebookSingIn())
     }
     

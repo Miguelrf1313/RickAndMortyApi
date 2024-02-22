@@ -6,9 +6,9 @@ import {
   Grid,
   TextField,
   Button,
+  Card,
 } from "@mui/material";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
+import BasicPagination from './BasicPagination'
 import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -54,7 +54,7 @@ export const CardsContainer2 = () => {
             justifyContent="center"
             alignItems="center"
             width="100%"
-            backgroundColor='red'
+            backgroundColor='#161c24'
           >
             <Grid
               item
@@ -64,8 +64,9 @@ export const CardsContainer2 = () => {
                 justifyContent: "center",
                 gap: "20px",
                 width: "100%",
-                height: "auto",
-                backgroundColor:'blue'
+                height: "20vh",
+                backgroundColor:'#161c24',
+                boxShadow:'2px 3px 10px 0px'
               }}
             >
               <TextField
@@ -86,51 +87,26 @@ export const CardsContainer2 = () => {
                   fontWeight: "500",
                   background: "white",
                   color: "blue",
+                  borderRadius:'30px',
+                  ".css-ibmumw-MuiInputBase-root-MuiOutlinedInput-root":{borderRadius:'30px'}
                 }}
               />
             </Grid>
-            <Grid
-              container
-              justifyContent="left"
-              alignItems="center"
-              display="flex"
-              backgroundColor="#041C32"
-            >
-              <Grid
-                component="div"
-                display="flex"
-                border=" solid 0.125em"
-                width="3vw"
-                height="40vh"
-                alignItems="center"
-                justifyContent="center"
-                borderRadius="0.158em"
-                backgroundColor="#ffffff30"
-              >
-                <IconButton onClick={() => setPages(pages - 1)}>
-                  <ArrowCircleLeftIcon
-                    sx={{
-                      color: "white",
-                      borderRadius: "0.5em",
-                      border: "#20c439 1.5px solid",
-                      cursor: "pointer",
-                    }}
-                  />
-                </IconButton>
-              </Grid>
+                
+           
               <Grid
                 container
-                // lg={12}
-                height="80vh"
+              
                 display="flex"
-                // flexDirection: "row",
                 alignItems="center"
                 justifyContent="center"
-                gap="5px"
+                gap="15px"
                 padding="20px"
-                backgroundColor="#212b36"
-                width="20vw"
+                backgroundColor="#1a1c1e"
+                width="100vw"
+                boxShadow='2px 3px 10px 0px'
               >
+               
                 <Modal1
                   ids={ids}
                   handleClose={handleClose}
@@ -155,32 +131,35 @@ export const CardsContainer2 = () => {
                     {(() => {
                       if (chara.status == "Alive") {
                         return (
-                          <CardMedia
-                            display="flex"
-                            sx={{
-                              border: "#20c439  solid 0.125em",
-                              boxShadow: "0 0 1em 0 #20c439",
-                              borderRadius: "0.158em",
-                              maxWidth: "7vw",
-                              height: "18vh",
-                              display: "flex",
-                              backgroundColor: "red",
-                            }}
-                            component="img"
-                            image={chara.image}
-                            alt={chara.name}
-                          />
+                          <Card>
+
+                            <CardMedia
+                              display="flex"
+                              sx={{
+                                border: "#20c439  solid 1px",
+                                boxShadow:'2px 3px 10px 0px',
+                                borderRadius: "0.158em",
+                                maxWidth: "7vw",
+                                height: "18vh",
+                                display: "flex",
+                                backgroundColor: "red",
+                              }}
+                              component="img"
+                              image={chara.image}
+                              alt={chara.name}
+                            />
+                          </Card>
                         );
                       } else if (chara.status == "Dead") {
                         return (
                           <CardMedia
                             display="flex"
                             sx={{
-                              border: "#C70039  solid 0.125em",
-                              boxShadow: "0 0 1em 0 #C70039",
+                              border: "#C70039  solid 1px",
+                              boxShadow:'2px 3px 10px 0px',
                               borderRadius: "0.158em",
-                              maxWidth: "10vw",
-                              height: "11vh",
+                              maxWidth: "7vw",
+                              height: "18vh",
                               display: "flex",
                             }}
                             component="img"
@@ -193,11 +172,11 @@ export const CardsContainer2 = () => {
                           <CardMedia
                             display="flex"
                             sx={{
-                              border: "#EEEEEE  solid 0.125em",
-                              boxShadow: "0 0 1em 0 #EEEEEE",
+                              border: "#EEEEEE  solid 1px ",
+                              boxShadow:'2px 3px 10px 0px',
                               borderRadius: "0.158em",
-                              maxWidth: "6vw",
-                              height: "15vh",
+                              maxWidth: "7vw",
+                              height: "18vh",
                               display: "flex",
                             }}
                             component="img"
@@ -209,31 +188,13 @@ export const CardsContainer2 = () => {
                     })()}
                   </CardActionArea>
                 ))}
+                 <Box sx={{bgcolor:'#1a1c1e' ,display:'flex', justifyContent:'center', width:'100%'}}>
+                      <BasicPagination pages={pages}setPages={setPages} />
+
+                </Box>
               </Grid>
-              <Grid
-                component="div"
-                display="flex"
-                border=" solid 0.125em"
-                width="3vw"
-                height="40vh"
-                alignItems="center"
-                justifyContent="center"
-                borderRadius="0.158em"
-                backgroundColor="#ffffff30"
-              >
-                <IconButton onClick={() => setPages(pages + 1)}>
-                  <ArrowCircleRightIcon
-                    sx={{
-                      color: "white",
-                      borderRadius: "0.5em",
-                      boxShadow: "0 0 1px 2px 0 #20c439",
-                      border: "#20c439 1.5px solid",
-                      cursor: "pointer",
-                    }}
-                  />
-                </IconButton>
-              </Grid>
-            </Grid>
+            
+         
           </Grid>{" "}
         
 
