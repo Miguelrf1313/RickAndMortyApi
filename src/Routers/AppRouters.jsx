@@ -5,7 +5,7 @@ import { ProyectRoutes } from '../ProyectApp/routes/ProyectRoutes'
 import { CheckingAuth } from '../ui/components/checkingAuth'
 
 import { useCheckAuth } from '../hooks/useCheckAuth'
-import { UseProvider } from '../ProyectApp/useContext/UseProvider'
+
 
 export const AppRouters = () => {
 
@@ -22,7 +22,7 @@ export const AppRouters = () => {
 
  
   return (
-    <UseProvider>
+   
       <Routes>
         
     
@@ -38,6 +38,6 @@ export const AppRouters = () => {
 
 
 
-    </UseProvider>
+  
   )
 }

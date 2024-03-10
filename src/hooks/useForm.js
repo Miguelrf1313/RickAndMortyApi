@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
 export const useForm = ( initialForm = {}, formValidations = {}) => {
-  
+    const [names, setNames] = useState("");
+    const [pages, setPages] = useState(0);
     const [ formState, setFormState ] = useState( initialForm );
     const [ formValidation, setFormValidation ] = useState({});
 
@@ -52,7 +53,8 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
         formState,
         onInputChange,
         onResetForm,
-
+        names, setNames,pages, setPages,
+        
         ...formValidation,
         isFormValid
     }

@@ -3,9 +3,6 @@ import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import { createNewFavorite } from "../../../slices/ChraracterSlice/thunks";
 import { Grid, Snackbar } from "@mui/material";
 import morty from "../../assets/morty.png";
@@ -49,7 +46,7 @@ export const Modal1 = ({ handleClose, open, ids }) => {
 
   const { vertical, horizontal, open1 } = denegado;
 
-  const { open2} = aprobado;
+  const { open2 } = aprobado;
 
   const handleCloses = () => {
     setDenegado({ ...denegado, open1: false });

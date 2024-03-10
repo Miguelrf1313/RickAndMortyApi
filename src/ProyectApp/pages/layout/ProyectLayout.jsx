@@ -11,7 +11,7 @@ export const ProyectLayout = ({children}) => {
         <Grid sx={{display:'flex'}} >
 
              {/* <SideBar/> */}
-        <NavBar2/>
+     
             {/* <Hero/> */}
 
         </Grid>
