@@ -5,7 +5,7 @@ import { FirebaseDB } from "../firebase/config"
 
 
 
-export const startChatacters = async(uid = '') =>{
+export const startChatacters = async(uid) =>{
 
     const collectionRef = collection(FirebaseDB,`${uid}/Favorite/characters`);
     const docs = await getDocs(collectionRef);

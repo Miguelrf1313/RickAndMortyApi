@@ -6,26 +6,52 @@ import { startChatacters } from "../../helpers/startCharacters";
 
 
 
+
 export const createNewFavorite = (characterss) => {
     return async(dispatch, getState) => {
+        const { uid } = getState().auth;    
 
-        const {uid} = (getState().auth);    
-
+        const newDoc = doc(collection(FirebaseDB, `${uid}/Favorite/characters`));
+        
         const newCharacter = {
             ...characterss,
-            dni:null    
-
+            dni: newDoc.id   // ✅ asignamos el ID antes de guardar
         };
-        
-        
-        const newDoc = doc( collection( FirebaseDB, `${uid}/Favorite/characters`));
+
+
         await setDoc(newDoc, newCharacter);
-        newCharacter.dni = newDoc.id;
-        dispatch(setCharacters(newCharacter))
-    
-       
+        
+        dispatch(setCharacters(newCharacter));
     }
 }
+
+// export const createNewFavorite = (characterss) => {
+//     return async(dispatch, getState) => {
+
+//         const {uid} = (getState().auth);    
+
+    
+//         const newDoc = doc( collection( FirebaseDB, `${uid}/Favorite/characters`));
+
+//         // newCharacter.dni = newDoc.id;
+
+//             const newCharacter = {
+//             ...characterss,
+//             dni:null    
+
+//         };
+
+//          dispatch(setCharacters(newCharacter));
+
+   
+        // await setDoc(newDoc, newCharacter);
+
+
+        // dispatch(setCharacters(newCharacter))
+    
+       
+    
+
 
 
 export const startLoadingCharacters = () => {
@@ -40,7 +66,18 @@ export const startLoadingCharacters = () => {
         }
 }
 
+// export const startDeletCharacter = (id) => {
+//   return async (dispatch, getState) => {
+//     const { uid } = getState().auth;
 
+//     // 🔥 ruta correcta
+//     const docRef = doc(FirebaseDB, `Favorite/${uid}/characters/${id}`);
+//     await deleteDoc(docRef);
+
+//     dispatch(delectCharacter(id));
+//     console.log("Eliminado:", id);
+//   };
+// };
 export const startDeletCharacter = () => {
     return async(dispatch,getState) => {
         const {uid} = (getState().auth);
@@ -48,6 +85,18 @@ export const startDeletCharacter = () => {
         const docRef = doc(  FirebaseDB, `${uid}/Favorite/characters/${acti.dni}`);
         await deleteDoc(docRef);
         dispatch(delectCharacter(acti.dni))
-        console.log(acti.dni)
+    
     }
 }
+
+// export const startDeletCharacter = (id) => {
+//   return async (dispatch, getState) => {
+//     const { uid } = getState().auth;
+
+//     const docRef = doc(FirebaseDB, `${uid}/Favorite/characters/${id}`);
+//     await deleteDoc(docRef);
+
+//     dispatch(delectCharacter(id));
+//     console.log("Eliminado:", id);
+//   };
+// };

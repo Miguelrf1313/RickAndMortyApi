@@ -140,7 +140,7 @@ export const Modal1 = ({ handleClose, open, ids }) => {
         onClose={handleCloses}
         autoHideDuration={3000}
         // message="I love snacks"
-        key={vertical + horizontal}
+        key={ horizontal}
       >
         <Grid item 
         sx={{ 

@@ -9,6 +9,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useSelector } from "react-redux";
 import section from "../../assets/section.jpg"; 
 import { Recents } from "./Recents";
+import { RecetsItems } from "./RecetsItems";
 
 
 
@@ -195,7 +196,7 @@ export const CardsContainer = () => {
                   
             
                    
-                <Recents favorite={favorite} /> 
+                <RecetsItems favorite={favorite} /> 
                  
                    
 

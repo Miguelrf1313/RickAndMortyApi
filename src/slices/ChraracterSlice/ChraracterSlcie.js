@@ -8,7 +8,7 @@ export const charactersSlice = createSlice({
   initialState:{ 
    cardLoading: false,
    favorite:[],
-    active:[]
+    active:null
 
    
 
@@ -16,11 +16,14 @@ export const charactersSlice = createSlice({
   },
   reducers: {
     setCharacters: (state, action) => {
-        state.favorite.push(action.payload);
+      const character = action.payload
+        state.favorite.push(character);
         state.cardLoading = false;
       },
 
       setActiveC: (state, action) => {
+        const activos = action.payload
+        console.log(activos)
         state.active = action.payload;
       },
 
@@ -30,8 +33,9 @@ export const charactersSlice = createSlice({
       },
 
       delectCharacter: (state, action) => {
-          state.active = null;
+            //  state.active = null;
           state.favorite = state.favorite.filter( fa => fa.dni !== action.payload)
+            // state.active = state.active.filter(fa => fa.dni !== dni);
       }
       
   

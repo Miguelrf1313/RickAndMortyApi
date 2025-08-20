@@ -11,7 +11,7 @@ export const Recents = ({favorite}) => {
 
   return (
     <>
-      <SimpleBottomNavigation />
+      {/* <SimpleBottomNavigation /> */}
       {favorite.map((favo) => (
         <RecetsItems  key={favo.id} {  ...favo } />
         
