@@ -23,14 +23,6 @@ export const RecetsItems = ({ }) => {
 
   const onDeleT = (dni) => {
     dispactch(startDeletCharacter(dni));
-
-
-        dispactch(setActiveC({ ...favorite }))
-
-    
-
-    
-
   }
 
 
